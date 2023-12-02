@@ -16,23 +16,25 @@ def q1():
 
     return sum_valid_ids
 
+
 def q2():
     power_set = []
     with open("input.txt", mode="r") as f:
         input = f.readlines()
-    
+
     for i in range(len(input)):
         min_red = minColourCubes(r"\br\w+", input, i)
         min_green = minColourCubes(r"\bg\w+", input, i)
         min_blue = minColourCubes(r"\bb\w+", input, i)
         power_set.append(min_red*min_green*min_blue)
-    
+
     return sum(power_set)
-    
+
 
 def main():
     print(f"Q1 ans: {q1()}\n")
     print(f"Q2 ans: {q2()}\n")
+
 
 def isValidGame(regex, input, i, max_num_colour):
     # Regex to find the position of each colour
@@ -52,6 +54,7 @@ def isValidGame(regex, input, i, max_num_colour):
             return False
     return True
 
+
 def minColourCubes(regex, input, i):
     min_num = 0
 
@@ -70,6 +73,7 @@ def minColourCubes(regex, input, i):
             min_num = int(tens + ones)
 
     return min_num
+
 
 if __name__ == "__main__":
     main()
