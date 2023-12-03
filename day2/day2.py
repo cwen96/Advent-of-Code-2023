@@ -2,12 +2,13 @@ import re
 
 
 def q1():
+    max_red = 12
+    max_green = 13
+    max_blue = 14
+    sum_valid_ids = 0
+    
     with open("input.txt", mode="r") as f:
         input = f.readlines()
-        max_red = 12
-        max_green = 13
-        max_blue = 14
-        sum_valid_ids = 0
 
     # Sum game ID if the game is valid for all colours
     for i in range(len(input)):
